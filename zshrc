@@ -22,7 +22,7 @@ function start_agent() {
   . $SSH_ENV
   /usr/bin/ssh-add
 }
-echo "Hi Nick. My name is Hank. I live inside your computer."
+
 start_agent 2> /dev/null # Suppress output (no need to see it!)
 
 source_heroku_apps
