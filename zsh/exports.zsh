@@ -1,5 +1,5 @@
 export MANPATH=/opt/local/share/man:$MANPATH
-export PATH=$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin/npm:/usr/local/bin/git:$PATH
+export PATH=$HOME/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin/npm:/usr/local/bin/git:$PATH
 export CDPATH=~/Sites:~/
 export RUBYOPT='rubygems'
 export GREP_OPTIONS='--color=auto'
