@@ -1,0 +1,7 @@
+#compdef gpr
+
+_gpr() {
+  _arguments\
+    "1: :(`git remote`)"\
+    "2: :(`git branch | tr '*' ' '`)"
+}

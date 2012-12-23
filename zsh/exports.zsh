@@ -1,0 +1,13 @@
+export MANPATH=/opt/local/share/man:$MANPATH
+export PATH=$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin/npm:/usr/local/bin/git:$PATH
+export CDPATH=~/Sites:~/
+export RUBYOPT='rubygems'
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='3;33'
+export EDITOR='subl -w'
+export TERM=xterm-color
+export LSCOLORS=gxfxcxdxbxegedabagacad
+export CLICOLOR=1
+export PROJECTS=$HOME/Sites
+export NODE_PATH="/usr/local/bin/node:/usr/local/lib/node_modules"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

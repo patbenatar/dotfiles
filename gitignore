@@ -1,0 +1,12 @@
+.rvmrc
+.powrc
+database.yml
+.DS_Store
+public/system
+.zsh_rake_cache
+.sass-cache
+public/uploads
+.powenv
+.rbenv-version
+.rbenv-vars
+.heroku-apps
