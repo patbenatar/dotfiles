@@ -1,5 +1,5 @@
 export MANPATH=/opt/local/share/man:$MANPATH
-export PATH=$HOME/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin/npm:/usr/local/bin/git:$PATH
+export PATH=$HOME/.pilot/bin:$HOME/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH
 export CDPATH=~/Sites:~/
 export RUBYOPT='rubygems'
 export GREP_OPTIONS='--color=auto'
@@ -11,3 +11,4 @@ export CLICOLOR=1
 export PROJECTS=$HOME/Sites
 export NODE_PATH="/usr/local/bin/node:/usr/local/lib/node_modules"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which pilot > /dev/null; then eval "$(pilot init -)"; fi
