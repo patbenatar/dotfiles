@@ -59,6 +59,10 @@ function bigboom {
   boom && rake db:drop db:create db:migrate db:seed
 }
 
+function pow {
+  ln -s `pwd` ~/.pow/$1
+}
+
 ######################
 # Heroku
 ######################
