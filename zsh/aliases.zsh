@@ -86,22 +86,6 @@ alias tl="tmux list-sessions"
 alias tk="tmux kill-session -t"
 
 ######################
-# Processes
-######################
-
-alias mongostart="sudo mongod --fork --logpath /var/log/mongodb.log --logappend"
-alias startredis="redis-server > /var/log/redis.log &"
-
-alias mysql_start="launchctl load -F ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
-alias mysql_stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
-
-alias pgstart="launchctl load -F ~/Library/LaunchAgents/org.postgresql.postgres.plist"
-alias pgstop="launchctl unload ~/Library/LaunchAgents/org.postgresql.postgres.plist"
-
-alias memcached_start="launchctl load -F ~/Library/LaunchAgents/homebrew.mxcl.memcached.plist"
-alias memcached_stop="launchctl unload -F ~/Library/LaunchAgents/homebrew.mxcl.memcached.plist"
-
-######################
 # Projects
 ######################
 
