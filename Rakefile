@@ -1,9 +1,14 @@
-SKIP_FILES = ["Rakefile"]
+SKIP_FILES = %W[ README.md Rakefile ]
+
+task :default => :install
 
 task :install do
   Dir.foreach(".") do |file|
-    next if SKIP_FILES.include?(file) || file.start_with?(".")
-    file_with_path = File.expand_path(file)
-    `ln -s -f #{file_with_path} ~/.#{file}`
+    unless SKIP_FILES.include?(file) || file.start_with?(".")
+      source = File.join(Dir.pwd, file)
+      destination = File.join(ENV["HOME"], ".#{file}")
+      rm_rf destination
+      ln_s source, destination
+    end
   end
 end
