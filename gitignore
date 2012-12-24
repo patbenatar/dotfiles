@@ -10,3 +10,4 @@ public/uploads
 .rbenv-version
 .rbenv-vars
 .heroku-apps
+.pilot-manifest
