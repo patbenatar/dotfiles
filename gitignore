@@ -11,3 +11,4 @@ public/uploads
 .rbenv-vars
 .heroku-apps
 .pilot-manifest
+.ruby-version
