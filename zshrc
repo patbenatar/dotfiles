@@ -27,3 +27,5 @@ start_agent 2> /dev/null # Suppress output (no need to see it!)
 
 source_heroku_apps
 cdefault
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
