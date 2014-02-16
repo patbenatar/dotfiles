@@ -4,12 +4,18 @@
 
 alias pull="git pull"
 alias ci="git commit"
+alias co="git checkout"
 alias st="git status"
 alias fetch="git fetch"
+alias gfo="git fetch origin"
 alias log="git log"
 alias add="git add"
 alias grc="git rebase --continue"
 alias push="git push"
+alias gl="git log --graph --all --decorate"
+alias diff="git diff"
+function cot() { git checkout -t "origin/$@" }
+function nf() { git checkout -b "feature/$@" }
 
 function gitrm {
   for i in `git status | grep deleted | awk '{print $3}'`; do git rm $i; done
@@ -67,11 +73,13 @@ function pow {
 # Heroku
 ######################
 
-function ha() { heroku "$@" "-a" "$HEROKU_APP" }
-function hs() { heroku "$@" "-a" "$HEROKU_STG_APP" }
-function hp() { heroku "$@" "-a" "$HEROKU_PROD_APP" }
-alias push-stg="git push staging develop:master"
-alias push-prod="git push production master"
+function ha() { source_heroku_apps && heroku "$@" "-a" "$HEROKU_APP" }
+function hs() { source_heroku_apps && heroku "$@" "-a" "$HEROKU_STG_APP" }
+function hp() { source_heroku_apps && heroku "$@" "-a" "$HEROKU_PROD_APP" }
+function hn() { source_heroku_apps && heroku "$@" "-a" "$HEROKU_NIGHTLY_APP" }
+alias push-nightly="git push nightly master"
+alias push-stg="git push staging staging:master"
+alias push-prod="git push production production:master"
 
 # Source .heroku-apps if it exists
 function source_heroku_apps {
@@ -111,6 +119,8 @@ function current_working_project {
 alias re-source="source ~/.zshrc"
 alias ls="ls -la"
 alias s="subl ."
+alias pagekite="pagekite.py 3000 giantcola.pagekite.me"
+alias lipsum="~/.lipsum"
 
 function th () {
   mv $* ~/.Trash
