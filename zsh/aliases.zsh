@@ -73,10 +73,9 @@ function pow {
 # Heroku
 ######################
 
-function ha() { source_heroku_apps && heroku "$@" "-a" "$HEROKU_APP" }
-function hs() { source_heroku_apps && heroku "$@" "-a" "$HEROKU_STG_APP" }
-function hp() { source_heroku_apps && heroku "$@" "-a" "$HEROKU_PROD_APP" }
-function hn() { source_heroku_apps && heroku "$@" "-a" "$HEROKU_NIGHTLY_APP" }
+function hs() { heroku "$@" "--remote" "staging" }
+function hp() { heroku "$@" "--remote" "production" }
+function hn() { heroku "$@" "--remote" "nightly" }
 alias push-nightly="git push nightly master"
 alias push-stg="git push staging staging:master"
 alias push-prod="git push production production:master"
