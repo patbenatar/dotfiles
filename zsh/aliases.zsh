@@ -80,11 +80,11 @@ alias push-nightly="git push nightly master"
 alias push-stg="git push staging staging:master"
 alias push-prod="git push production production:master"
 
-# Source .heroku-apps if it exists
-function source_heroku_apps {
-  if [ -e ".heroku-apps" ]; then
-    source .heroku-apps
-  fi
+function pull-db() {
+  hp pgbackups:capture
+  curl -o latest.dump `hp pgbackups:url`
+  pg_restore --verbose --clean --no-acl --no-owner -h localhost -U `whoami` -d $@ latest.dump
+  rm latest.dump
 }
 
 ######################
