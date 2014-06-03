@@ -81,7 +81,7 @@ alias push-stg="git push staging staging:master"
 alias push-prod="git push production production:master"
 
 function pull-db() {
-  hp pgbackups:capture
+  hp pgbackups:capture --expire
   curl -o latest.dump `hp pgbackups:url`
   pg_restore --verbose --clean --no-acl --no-owner -h localhost -U `whoami` -d $@ latest.dump
   rm latest.dump
