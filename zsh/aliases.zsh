@@ -114,6 +114,11 @@ function current_working_project {
 }
 
 ######################
+# Node
+######################
+alias npm-exec='PATH=$(npm bin):$PATH'
+
+######################
 # Misc
 ######################
 
