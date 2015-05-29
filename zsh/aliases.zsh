@@ -12,8 +12,10 @@ alias log="git log"
 alias add="git add"
 alias grc="git rebase --continue"
 alias push="git push"
+alias br="git branch"
 alias gl="git log --graph --all --decorate"
 alias diff="git diff"
+alias squash="git rebase -i $(git merge-base HEAD origin/master)"
 function cot() { git checkout -t "origin/$@" }
 function nf() { git checkout -b "feature/$@" }
 
