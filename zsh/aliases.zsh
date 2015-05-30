@@ -45,32 +45,6 @@ function gpr {
   fi
 }
 
-# GitHub
-alias ghpr="git pull-request"
-
-######################
-# Rails
-######################
-
-alias rlog="tail -f log/development.log"
-
-function reload! () {
-  touch tmp/restart.txt
-}
-
-# Restart pow from the command line
-function boom {
-  kill -9 `ps aux | awk '/Pow/ && !/awk/ { print $2 }'`
-}
-
-function bigboom {
-  boom && rake db:drop db:create db:migrate db:seed
-}
-
-function pow {
-  ln -s `pwd` ~/.pow/$1
-}
-
 ######################
 # Heroku
 ######################
@@ -99,23 +73,9 @@ alias tl="tmux list-sessions"
 alias tk="tmux kill-session -t"
 
 ######################
-# Projects
-######################
-
-# cd to the default working directory set by current_working_project
-function cdefault {
-  export wdir=`cat $HOME/bin/config/current_project_path`
-  cd $wdir
-}
-
-function current_working_project {
-  rm ~/bin/config/current_project_path
-  pwd > ~/bin/config/current_project_path
-}
-
-######################
 # Node
 ######################
+
 alias npm-exec='PATH=$(npm bin):$PATH'
 
 ######################
@@ -125,17 +85,7 @@ alias npm-exec='PATH=$(npm bin):$PATH'
 alias re-source="source ~/.zshrc"
 alias ls="ls -la"
 alias s="subl ."
-alias pagekite="pagekite.py 3000 giantcola.pagekite.me"
-alias lipsum="~/.lipsum"
-
-function th () {
-  mv $* ~/.Trash
-}
 
 function pgrep {
   ps aux | grep $*
-}
-
-function internet\? {
-  (ping -c 3 -t 3 google.com >/dev/null 2>&1 && echo 'yep') || echo 'nope'
 }
