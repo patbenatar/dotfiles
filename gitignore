@@ -1,6 +1,5 @@
 .rvmrc
 .powrc
-database.yml
 .DS_Store
 public/system
 .zsh_rake_cache
