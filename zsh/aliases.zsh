@@ -48,11 +48,8 @@ function gpr {
 ######################
 # Heroku
 ######################
-
-function hs() { heroku "$@" "--remote" "staging" }
-function hp() { heroku "$@" "--remote" "production" }
-function hn() { heroku "$@" "--remote" "nightly" }
-alias push-nightly="git push nightly master"
+function hs() { heroku "$@" "--app" `~/.util/heroku_app_name.rb staging` }
+function hp() { heroku "$@" "--app" `~/.util/heroku_app_name.rb production` }
 alias push-stg="git push staging staging:master"
 alias push-prod="git push production production:master"
 
