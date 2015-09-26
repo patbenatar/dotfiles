@@ -9,6 +9,5 @@ export TERM=xterm-color
 export LSCOLORS=gxfxcxdxbxegedabagacad
 export CLICOLOR=1
 export NODE_PATH="/usr/local/bin/node:/usr/local/lib/node_modules"
-export RUBYGEMS_GEMDEPS="-"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if which pilot > /dev/null; then eval "$(pilot init -)"; fi
