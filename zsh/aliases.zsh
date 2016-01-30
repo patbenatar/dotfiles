@@ -15,6 +15,7 @@ alias push="git push"
 alias br="git branch"
 alias gl="git log --graph --all --decorate"
 alias diff="git diff"
+alias to-prod="push origin master && co staging && git merge master && push origin staging && co production && git merge staging && push origin production"
 function squash() { git rebase -i $(git merge-base HEAD origin/master) }
 function cot() { git checkout -t "origin/$@" }
 function nf() { git checkout -b "feature/$@" }
