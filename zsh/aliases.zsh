@@ -84,6 +84,7 @@ alias npm-exec='PATH=$(npm bin):$PATH'
 alias re-source="source ~/.zshrc"
 alias ls="ls -la"
 alias s="subl ."
+alias a="atom ."
 
 function pgrep {
   ps aux | grep $*
