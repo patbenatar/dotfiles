@@ -19,6 +19,7 @@ alias to-prod="push origin master && co staging && git merge master && push orig
 function squash() { git rebase -i $(git merge-base HEAD origin/master) }
 function cot() { git checkout -t "origin/$@" }
 function nf() { git checkout -b "feature/$@" }
+alias knockknock3000="lsof -i tcp:3000"
 
 function gitrm {
   for i in `git status | grep deleted | awk '{print $3}'`; do git rm $i; done
