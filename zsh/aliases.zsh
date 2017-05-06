@@ -2,39 +2,8 @@
 # Git
 ######################
 
-alias pull="git pull"
-alias ci="git commit"
-alias co="git checkout"
-alias st="git status"
-alias fetch="git fetch"
-alias gfo="git fetch origin"
-alias log="git log"
-alias add="git add"
-alias grc="git rebase --continue"
-alias push="git push"
-alias br="git branch"
-alias gl="git log --graph --all --decorate"
-alias diff="git diff"
 alias to-prod="push origin master && co staging && git merge master && push origin staging && co production && git merge staging && push origin production"
 function squash() { git rebase -i $(git merge-base HEAD origin/master) }
-function cot() { git checkout -t "origin/$@" }
-function nf() { git checkout -b "feature/$@" }
-alias knockknock3000="lsof -i tcp:3000"
-
-function gitrm {
-  for i in `git status | grep deleted | awk '{print $3}'`; do git rm $i; done
-}
-
-# Git add all changes, commit.
-function gac {
-  if [ ! $# -eq 1 ]; then
-    echo "Usage: gac <commit message>"
-    return
-  fi
-
-  git add -A
-  git commit -m "$1"
-}
 
 # Git pull and rebase
 # Show git log if rebasing finds new changes
@@ -82,10 +51,11 @@ alias npm-exec='PATH=$(npm bin):$PATH'
 ######################
 
 alias re-source="source ~/.zshrc"
-alias ls="ls -la"
+alias ls="ls -la -G"
 alias s="subl ."
-alias a="atom ."
 
 function pgrep {
   ps aux | grep $*
 }
+
+alias knockknock3000="lsof -i tcp:3000"

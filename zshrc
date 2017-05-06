@@ -1,18 +1,20 @@
-# Custom completion
-fpath=(~/.zsh/completion $fpath)
+export ZSH=$HOME/.oh-my-zsh
 
-autoload -U compinit && compinit
-autoload -U zmv
-autoload colors && colors
+ZSH_THEME="robbyrussell"
 
-source ~/.zsh/exports.zsh
-source ~/.zsh/prompt.zsh
-source ~/.zsh/history.zsh
-source ~/.zsh/set_options.zsh
-source ~/.zsh/completion.zsh
-source ~/.zsh/aliases.zsh
-source ~/.zsh/bindkeys.zsh
-source ~/.zsh/ssh.zsh
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-export NVM_DIR="/Users/giantcola/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+plugins=(git ssh-agent)
+
+source $ZSH/oh-my-zsh.sh
+
+# Personal...
+source $HOME/.zsh/exports.zsh
+source $HOME/.zsh/bootstrap.zsh
+source $HOME/.zsh/completion.zsh
+source $HOME/.zsh/history.zsh
+source $HOME/.zsh/aliases.zsh
+[ -s $HOME/.zsh/local.zsh ] && source $HOME/.zsh/local.zsh
