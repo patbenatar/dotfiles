@@ -5,17 +5,6 @@
 alias to-prod="push origin master && co staging && git merge master && push origin staging && co production && git merge staging && push origin production"
 function squash() { git rebase -i $(git merge-base HEAD origin/master) }
 
-# Git pull and rebase
-# Show git log if rebasing finds new changes
-# You can optionally pass in a remote and branch
-function gpr {
-  output=`git pull --rebase $1 $2`
-  echo $output
-  if [[ $output != *is\ up\ to\ date\.* ]] then
-    git log -n 3
-  fi
-}
-
 ######################
 # Heroku
 ######################
