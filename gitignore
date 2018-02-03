@@ -11,3 +11,4 @@ public/uploads
 .heroku-apps
 .pilot-manifest
 .ruby-version
+.vscode/
