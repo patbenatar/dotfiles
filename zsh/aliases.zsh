@@ -2,8 +2,9 @@
 # Git
 ######################
 
-alias to-prod="push origin master && co staging && git merge master && push origin staging && co production && git merge staging && push origin production"
+alias to-prod="git push origin master && git checkout staging && git merge master && git push origin staging && git checkout production && git merge staging && git push origin production"
 function squash() { git rebase -i $(git merge-base HEAD origin/master) }
+alias gcam="git add -A && git commit -m"
 
 ######################
 # Heroku
