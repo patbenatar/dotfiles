@@ -3,3 +3,4 @@
 # export NODE_PATH="/usr/local/bin/node:/usr/local/lib/node_modules"
 export EDITOR='subl -w'
 export NVM_DIR=$HOME/.nvm
+export AWS_SDK_LOAD_CONFIG=1
