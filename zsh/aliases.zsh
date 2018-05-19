@@ -4,7 +4,8 @@
 
 alias to-prod="git push origin master && git checkout staging && git merge master && git push origin staging && git checkout production && git merge staging && git push origin production"
 function squash() { git rebase -i $(git merge-base HEAD origin/master) }
-alias gcam="git add -A && git commit -m"
+alias gst="git status"
+alias gd="git diff"
 
 ######################
 # Heroku
@@ -29,12 +30,6 @@ alias ta="tmux attach-session -t"
 alias tn="tmux new-session -s"
 alias tl="tmux list-sessions"
 alias tk="tmux kill-session -t"
-
-######################
-# Node
-######################
-
-alias npm-exec='PATH=$(npm bin):$PATH'
 
 ######################
 # Misc
