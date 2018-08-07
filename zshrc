@@ -9,3 +9,5 @@ source $HOME/.zsh/completion.zsh
 source $HOME/.zsh/history.zsh
 source $HOME/.zsh/aliases.zsh
 [ -s $HOME/.zsh/local.zsh ] && source $HOME/.zsh/local.zsh
+
+source ~/.philosophie-git/bootstrap

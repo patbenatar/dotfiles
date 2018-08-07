@@ -12,3 +12,4 @@ public/uploads
 .pilot-manifest
 .ruby-version
 .vscode/
+.tool-versions

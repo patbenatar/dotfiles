@@ -6,6 +6,11 @@ alias to-prod="git push origin master && git checkout staging && git merge maste
 function squash() { git rebase -i $(git merge-base HEAD origin/master) }
 alias gst="git status"
 alias gd="git diff"
+alias gup="git pull --rebase"
+alias ga="git add"
+alias gfo="git fetch origin"
+alias gcam="git add . && git commit -a -m"
+alias gcamn="git add . && git commit --no-verify -a -m"
 
 ######################
 # Heroku
@@ -19,7 +24,7 @@ function pull-db() {
   hp pg:backups capture
   curl -o latest.dump `hp pg:backups public-url`
   pg_restore --verbose --clean --no-acl --no-owner -h localhost -U `whoami` -d $@ latest.dump
-  rm latest.dump
+  rm -f latest.dump
 }
 
 ######################
