@@ -49,3 +49,10 @@ function pgrep {
 }
 
 alias knockknock3000="lsof -i tcp:3000"
+
+function startvirtualenv {
+  export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
+  export WORKON_HOME=$HOME/.virtualenvs
+  export PROJECT_HOME=$HOME/projects
+  source /usr/local/bin/virtualenvwrapper.sh
+}
