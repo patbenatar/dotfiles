@@ -1,3 +1,3 @@
-export EDITOR='subl -w'
-export BUNDLER_EDITOR='subl'
+export EDITOR='code --wait'
+export BUNDLER_EDITOR='code'
 export AWS_SDK_LOAD_CONFIG=1
