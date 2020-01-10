@@ -56,3 +56,7 @@ function startvirtualenv {
   export PROJECT_HOME=$HOME/projects
   source /usr/local/bin/virtualenvwrapper.sh
 }
+
+if ! [ -x "$(command -v pbcopy)" ]; then
+  alias pbcopy="xclip -sel clip"
+fi
