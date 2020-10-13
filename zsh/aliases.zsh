@@ -37,6 +37,12 @@ alias tl="tmux list-sessions"
 alias tk="tmux kill-session -t"
 
 ######################
+# Docker
+######################
+
+alias dc="docker-compose"
+
+######################
 # Misc
 ######################
 
