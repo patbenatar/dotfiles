@@ -11,6 +11,7 @@ alias ga="git add"
 alias gfo="git fetch origin"
 alias gcam="git add . && git commit -a -m"
 alias gcamn="git add . && git commit --no-verify -a -m"
+alias clean-branches="git fetch -p && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D"
 
 ######################
 # Heroku
