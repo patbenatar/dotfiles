@@ -2,7 +2,6 @@
 # with the ARN of your MFA device available at $AWS_MFA_ARN
 
 require "json"
-require "pry"
 
 mfa_output = `aws sts get-session-token --serial-number #{ENV.fetch("AWS_MFA_ARN")} --token-code #{ARGV[0]}`
 
