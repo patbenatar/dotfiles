@@ -49,6 +49,7 @@ alias dcrw="docker-compose run web"
 # AWS
 ######################
 alias aws-mfa="ruby ~/.util/aws_mfa.rb"
+alias ecs-rails-c="~/.util/ecs_rails_c.sh"
 
 ######################
 # Misc
