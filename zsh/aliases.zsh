@@ -44,6 +44,7 @@ alias tk="tmux kill-session -t"
 alias dc="docker-compose"
 alias dcr="docker-compose run"
 alias dcrw="docker-compose run web"
+alias r="docker-compose run web rspec"
 
 ######################
 # AWS
@@ -57,7 +58,6 @@ alias ecs-rails-c="~/.util/ecs_rails_c.sh"
 
 alias re-source="source ~/.zshrc"
 alias ls="ls -la -G"
-alias s="subl ."
 
 function pgrep {
   ps aux | grep $*
