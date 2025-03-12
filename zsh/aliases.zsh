@@ -58,7 +58,7 @@ alias ecs-rails-c="~/.util/ecs_rails_c.sh"
 
 alias re-source="source ~/.zshrc"
 alias ls="ls -la -G"
-alias c="code-insiders ."
+alias c="code ."
 
 function pgrep {
   ps aux | grep $*
