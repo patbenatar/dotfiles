@@ -41,10 +41,10 @@ alias tk="tmux kill-session -t"
 # Docker
 ######################
 
-alias dc="docker-compose"
-alias dcr="docker-compose run"
-alias dcrw="docker-compose run web"
-alias r="docker-compose run web rspec"
+alias dc="USER=$(id -u):$(id -g) docker-compose"
+alias dcr="USER=$(id -u):$(id -g) docker-compose run"
+alias dcrw="USER=$(id -u):$(id -g) docker-compose run web"
+alias r="USER=$(id -u):$(id -g) docker-compose run web rspec"
 
 ######################
 # AWS
@@ -76,3 +76,32 @@ function startvirtualenv {
 if ! [ -x "$(command -v pbcopy)" ]; then
   alias pbcopy="xclip -sel clip"
 fi
+
+######################
+# Claude multi-user helper
+######################
+claude() {
+  local config_value="optify"
+  local claude_args=()
+
+  while [[ $# -gt 0 ]]; do
+    case $1 in
+      -u)
+        if [[ -n "$2" && "$2" != -* ]]; then
+          config_value="$2"
+          shift 2
+        else
+          echo "Error: -u requires a value" >&2
+          return 1
+        fi
+        ;;
+      *)
+        claude_args+=("$1")
+        shift
+        ;;
+    esac
+  done
+
+  echo "Claude Code user: $config_value."
+  CLAUDE_CONFIG_DIR="$HOME/.claude-$config_value" command claude "${claude_args[@]}"
+}
