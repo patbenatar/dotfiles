@@ -1,7 +1,8 @@
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+# Oh My Zsh configuration
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
+plugins=(git z history-substring-search docker docker-compose aws)
+source $ZSH/oh-my-zsh.sh
 
 source $HOME/.zsh/exports.zsh
 source $HOME/.zsh/completion.zsh
