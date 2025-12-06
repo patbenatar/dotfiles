@@ -9,7 +9,6 @@ source $HOME/.zsh/completion.zsh
 source $HOME/.zsh/history.zsh
 source $HOME/.zsh/aliases.zsh
 source $HOME/.zsh/ros.zsh
-source /usr/local/share/chruby/chruby.sh
 
 [ -s $HOME/.zsh/local.zsh ] && source $HOME/.zsh/local.zsh
 
