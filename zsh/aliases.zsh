@@ -105,3 +105,20 @@ claude() {
   echo "Claude Code user: $config_value."
   CLAUDE_CONFIG_DIR="$HOME/.claude-$config_value" command claude "${claude_args[@]}"
 }
+
+function cld() {
+  cd ~/Projects/onward || return
+  local name="$1"
+  local branch="worktree-$name"
+  if git show-ref --verify --quiet "refs/heads/$branch" \
+     && ! git worktree list --porcelain | grep -q "branch refs/heads/$branch$"; then
+    if [[ "$(git rev-list --count origin/main..$branch 2>/dev/null)" == "0" ]]; then
+      git branch -D "$branch" >/dev/null \
+        && echo "cld: cleared orphaned branch $branch (no worktree, no unmerged commits)"
+    else
+      echo "cld: $branch has unmerged commits — not deleting; pick another name or clean it up manually" >&2
+      return 1
+    fi
+  fi
+  claude -u onward -n "$name" -w "$name" --remote-control "$name"
+}
